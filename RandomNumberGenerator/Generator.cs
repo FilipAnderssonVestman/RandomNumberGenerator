@@ -1,17 +1,23 @@
-﻿namespace RandomNumberGenerator
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace RandomNumberGenerator
 {
     public class Generator
     {
-        public static bool GenerateList(int amount)
+        private static Random _random = new Random();
+
+        public static void GenerateIntList(int amount)
         {
+            var numberList = new List<int>();
 
+            for (int i = 0; i < amount; i++)
+                numberList.Add(_random.Next(10000));
 
-
-
-
-
-
-            return false;
+            using (TextWriter tw = new StreamWriter("RandomIntegers" + amount + ".txt"))
+                foreach (var num in numberList)
+                    tw.WriteLine(num);
         }
     }
 }

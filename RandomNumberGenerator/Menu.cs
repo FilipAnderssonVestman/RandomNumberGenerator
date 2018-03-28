@@ -13,15 +13,20 @@ namespace RandomNumberGenerator
         {
             while (true)
             {
-                Console.WriteLine("Welcome to Random Number Generator\n" +
-                    "1: Generate random list of integers");
+                Console.Write("Welcome to Random Number Generator\n" +
+                    "1: Generate random list of integers\n" +
+                    "Exit: Exit\n" +
+                    "Choice: ");
 
-                switch (Console.ReadLine())
+                switch (Console.ReadLine().ToLower())
                 {
                     case "1":
-                        var num = Input.GetInteger();
+                        Console.Write("Type amount: ");
+                        Generator.GenerateIntList(Input.GetInteger());
+                        Console.WriteLine("Success");
                         break;
-
+                    case "exit":
+                        return;
                     default:
                         break;
                 }
