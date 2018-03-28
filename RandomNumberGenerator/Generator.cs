@@ -17,7 +17,8 @@ namespace RandomNumberGenerator
 
             using (TextWriter tw = new StreamWriter("RandomIntegers" + amount + ".txt"))
                 foreach (var num in numberList)
-                    tw.WriteLine(num);
+                    tw.Write(num + " ");
+
         }
     }
 }

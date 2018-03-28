@@ -10,7 +10,7 @@ namespace RandomNumberGenerator
     {
         static void Main(string[] args)
         {
-            Console.Title = "Random Nuber Generator";
+            Console.Title = "Random Number Generator";
             var menu = new Menu();
             menu.Start();
         }
